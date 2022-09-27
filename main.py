@@ -28,7 +28,9 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
 
-# TODO Detect collision with food.
+    # Detect collision with food.
+    if snake.head.distance(food) < 15:
+        food.refresh()
 
 # TODO Create a scoreboard.
 
