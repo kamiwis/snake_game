@@ -3,6 +3,7 @@ from turtle import Screen
 import time
 from snake import Snake
 from food import Food
+from scoreboard import Scoreboard
 
 # Create a black screen using Screen class.
 screen = Screen()
@@ -14,6 +15,7 @@ screen.tracer(0)
 # Create a three segment Snake.
 snake = Snake()
 food = Food()
+scoreboard = Scoreboard()
 
 screen.listen()
 screen.onkey(snake.up, "Up")
@@ -30,9 +32,8 @@ while game_is_on:
 
     # Detect collision with food.
     if snake.head.distance(food) < 15:
+        scoreboard.increase_score()
         food.refresh()
-
-# TODO Create a scoreboard.
 
 # TODO Detect collision with wall.
 
