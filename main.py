@@ -1,10 +1,11 @@
 """This app allows the user to play Snake using the `turtle` library."""
-import turtle as t
+from turtle import Screen
 import time
 from snake import Snake
+from food import Food
 
 # Create a black screen using Screen class.
-screen = t.Screen()
+screen = Screen()
 screen.setup(width=600, height=600)
 screen.bgcolor("black")
 screen.title("Snake Game")
@@ -12,6 +13,7 @@ screen.tracer(0)
 
 # Create a three segment Snake.
 snake = Snake()
+food = Food()
 
 screen.listen()
 screen.onkey(snake.up, "Up")
