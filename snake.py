@@ -48,11 +48,7 @@ class Snake():
         Places segments in the correct position.
         """
         for pos in STARTING_POSITIONS:
-            new_segment = t.Turtle("square")
-            new_segment.color("white")
-            new_segment.pu()
-            new_segment.goto(pos)
-            self.segments.append(new_segment)
+            self.add_segment(pos)
     
     def move(self):
         """Moves the snake at a constant MOVE_DISTANCE.
@@ -83,3 +79,14 @@ class Snake():
         """Turns the snake right - 0 degrees"""
         if self.head.heading() != RIGHT:
             self.head.setheading(RIGHT)
+    
+    def add_segment(self, pos):
+        new_segment = t.Turtle("square")
+        new_segment.color("white")
+        new_segment.pu()
+        new_segment.goto(pos)
+        self.segments.append(new_segment)
+    
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
+
