@@ -1,12 +1,14 @@
 """Food Class
 
 This script creates a class called Food for the Snake Game that inhertis from Turtle class.
-This script requires `turtle` module to be imported.
+This script requires `turtle` and `random` modules to be imported.
 
 This script can be imported as a module containing the Snake class.
 """
 from turtle import Turtle
 import random
+
+SHAPE = "turtle"
 
 class Food(Turtle):
     """
@@ -15,14 +17,15 @@ class Food(Turtle):
     ...
     Attributes
     __________
-    
+    Inherited from Turtle class
     Methods
     _______
-    
+    refresh()
+        Generates a new food at a random (x. y) location.
     """
     def __init__(self):
         super().__init__()
-        self.shape("circle")
+        self.shape(SHAPE)
         self.penup()
         self.shapesize(stretch_len=0.5, stretch_wid=0.5)
         self.color("blue")
