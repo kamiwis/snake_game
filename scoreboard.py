@@ -7,6 +7,9 @@ This script can be imported as a module containing the Snake class.
 """
 from turtle import Turtle
 
+ALIGNMENT = "center"
+FONT = ("Arial", 24, "normal")
+
 class Scoreboard(Turtle):
     def __init__(self):
         super().__init__()
@@ -18,7 +21,7 @@ class Scoreboard(Turtle):
         self.update_score()
 
     def update_score(self):
-        self.write(f"Score: {self.score}", align="center", font=("Arial", 24, "normal"))
+        self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT)
     
     def increase_score(self):
         self.score += 1

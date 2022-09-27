@@ -1,4 +1,5 @@
-"""This app allows the user to play Snake using the `turtle` library."""
+"""This app allows the user to play Snake using the `turtle` library.
+"""
 from turtle import Screen
 import time
 from snake import Snake
