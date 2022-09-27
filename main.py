@@ -26,9 +26,6 @@ while game_is_on:
     time.sleep(0.1)
     snake.move()
 
-# TODO Control the snake.
-
-
 # TODO Detect collision with food.
 
 # TODO Create a scoreboard.
