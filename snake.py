@@ -45,6 +45,7 @@ class Snake():
         self.segments = []
         self.create_snake()
         self.head = self.segments[0]
+
     def create_snake(self):
         """Creates a snake with 3 white square segments from Turtle class.
         Uses the STARTING_POSITION constant in order to space segments.
@@ -52,6 +53,7 @@ class Snake():
         """
         for pos in STARTING_POSITIONS:
             self.add_segment(pos)
+
     def move(self):
         """Moves the snake at a constant MOVE_DISTANCE.
         Takes into consideration that the individual segments need to trail behind eachother.
@@ -61,22 +63,27 @@ class Snake():
             new_y = self.segments[seg_num - 1].ycor()
             self.segments[seg_num].goto(new_x, new_y)
         self.head.forward(MOVE_DISTANCE)
+
     def up(self):
         """Turns the snake up - 90 degrees"""
         if self.head.heading() != DOWN:
             self.head.setheading(UP)
+
     def down(self):
         """Turns the snake down - 270 degrees"""
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
+
     def left(self):
         """Turns the snake left - 180 degrees"""
         if self.head.heading() != RIGHT:
             self.head.setheading(LEFT)
+
     def right(self):
         """Turns the snake right - 0 degrees"""
         if self.head.heading() != RIGHT:
             self.head.setheading(RIGHT)
+
     def add_segment(self, pos):
         """Adds segnent to snake."""
         new_segment = t.Turtle("square")
@@ -84,6 +91,7 @@ class Snake():
         new_segment.pu()
         new_segment.goto(pos)
         self.segments.append(new_segment)
+        
     def extend(self):
         """Extends snake by adding segment."""
         self.add_segment(self.segments[-1].position())
