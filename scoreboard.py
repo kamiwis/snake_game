@@ -32,20 +32,28 @@ class Scoreboard(Turtle):
         self.penup()
         self.color("white")
         self.score = 0
+        self.highscore = 0
         self.goto(0, 270)
         self.update_score()
 
     def update_score(self):
         """Adds scoreboard to game screen."""
-        self.write(f"Score: {self.score}", align=ALIGNMENT, font=FONT)
+        self.clear()
+        self.write(f"Score: {self.score} High Score: {self.highscore}", align=ALIGNMENT, font=FONT)
         
     def increase_score(self):
         """Increases the score when snake collides with food."""
         self.score += 1
         self.clear()
         self.update_score()
+    
+    def reset(self):
+        if self.score > self.highscore:
+            self.highscore = self.score
+        self.score = 0
+        self.update_score()
 
-    def game_over(self):
-        """Ends game when snake collides with wall or self."""
-        self.goto(0, 0)
-        self.write("GAME OVER", align=ALIGNMENT, font=FONT)
+    # def game_over(self):
+    #     """Ends game when snake collides with wall or self."""
+    #     self.goto(0, 0)
+    #     self.write("GAME OVER", align=ALIGNMENT, font=FONT)
